@@ -3,9 +3,9 @@ using Terraria;
 using Terraria.ID;
 using Terraria.ModLoader;
 
-namespace TestingMod.Items
+namespace CobbleMod.Items
 {
-	public class TestSword : ModItem
+	public class CobbleMod : ModItem
 	{
 		public override void SetStaticDefaults()
 		{

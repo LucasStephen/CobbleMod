@@ -3,7 +3,7 @@ using Terraria;
 using Terraria.ID;
 using Terraria.ModLoader;
 
-namespace TestingMod.Projectiles
+namespace CobbleMod.Projectiles
 {
 	public class HomingBall : ModProjectile
 	{
