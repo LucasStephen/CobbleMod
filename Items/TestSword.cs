@@ -5,7 +5,7 @@ using Terraria.ModLoader;
 
 namespace CobbleMod.Items
 {
-	public class CobbleMod : ModItem
+	public class TestSword : ModItem
 	{
 		public override void SetStaticDefaults()
 		{
