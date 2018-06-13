@@ -30,13 +30,13 @@ namespace CobbleMod.Items
 			item.UseSound = SoundID.Item15;
 			item.autoReuse = true;
 			item.shoot = mod.ProjectileType("RedKnifeProjectile");
-			item.shootSpeed = 10f;
+			item.shootSpeed = 50f;
 		}
 		public override bool Shoot(Player player, ref Microsoft.Xna.Framework.Vector2 position, ref float speedX, ref float speedY, ref int type, ref int damage, ref float knockBack)
         {
-			float numberProjectiles = 3; // 3 shots
-            float rotation = MathHelper.ToRadians(45);//Shoots them in a 45 degree radius. (This is technically 90 degrees because it's 45 degrees up from your cursor and 45 degrees down)
-            position += Vector2.Normalize(new Vector2(speedX, speedY)) * 45f; //45 should equal whatever number you had on the previous line
+			float numberProjectiles = 5; // 5 shots
+            float rotation = MathHelper.ToRadians(10);//Shoots them in a 10 degree radius. (This is technically 90 degrees because it's 45 degrees up from your cursor and 45 degrees down)
+            position += Vector2.Normalize(new Vector2(speedX, speedY)) * 10f; //10 should equal whatever number you had on the previous line
             for (int i = 0; i < numberProjectiles; i++)
             {
                 Vector2 perturbedSpeed = new Vector2(speedX, speedY).RotatedBy(MathHelper.Lerp(-rotation, rotation, i / (numberProjectiles - 1))) * .2f; // Vector for spread. Watch out for dividing by 0 if there is only 1 projectile.
