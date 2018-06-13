@@ -40,6 +40,14 @@ namespace CobbleMod.Projectiles
             int healingAmount = damage/30; 
             p.statLife +=healingAmount;
             p.HealEffect(healingAmount, true);
+            if (target.life <= 0)
+            {
+                Random r = new Random();
+                for (int i = 0; i < 3; i++)
+                {
+                    Projectile.NewProjectile(projectile.Center.X, projectile.Center.Y, r.Next(-3, 3), r.Next(-3, 3), mod.ProjectileType("KillingIntent"), damage * 2, 0, Main.myPlayer, 0f, 0f); //Spawning a projectile
+                }
+            }
         } 
 	}
 }
