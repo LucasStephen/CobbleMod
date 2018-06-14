@@ -7,34 +7,36 @@ using Terraria.ModLoader;
 
 namespace CobbleMod.Items
 {
-	public class RainbowReaper : ModItem
-	{
-		public override void SetStaticDefaults()
-		{
-			DisplayName.SetDefault("Rainbow Reaper");
-			Tooltip.SetDefault("Double rainbow all the way");
-		}
-		public override void SetDefaults()
-		{
-			item.melee = true;
-			item.useTurn = true;
-			item.damage = 250;
-			item.width = 64;
-			item.height = 64;
-			item.useTime = 20;
-			item.useAnimation = 20;
-			item.useStyle = 1;
-			item.knockBack = 6;
-			item.value = 1000000;
-			item.rare = 12;
-			item.UseSound = SoundID.Item15;
+    public class ShitWand : ModItem
+    {
+        public override void SetStaticDefaults()
+        {
+            DisplayName.SetDefault("Shitty Wand");
+            Tooltip.SetDefault("Under Development");
+        }
+        public override void SetDefaults()
+        {
+            item.damage = 50;
+            item.noMelee = true;
+            item.noUseGraphic = false;
+            item.magic = true;
+            item.mana = 0;
+            item.rare = 5;
+            item.width = 28;
+            item.height = 30;
+            item.UseSound = SoundID.Item37;
+            item.useStyle = 5;
+            item.shootSpeed = 100f;
+			item.useTime = 10;
+            item.useAnimation = 10;
+            item.shoot = 280;
 			item.autoReuse = true;
-			item.shoot = 250;
-			item.shootSpeed = 20f;
-		}
+            item.value = Item.sellPrice(0, 3, 0, 0);
+        }
+		
 		public override bool Shoot(Player player, ref Microsoft.Xna.Framework.Vector2 position, ref float speedX, ref float speedY, ref int type, ref int damage, ref float knockBack)
         {
-			float numberProjectiles = 2; // 2 shots
+			float numberProjectiles = 10; // 5 shots
             float rotation = MathHelper.ToRadians(10);//Shoots them in a 10 degree radius. (This is technically 90 degrees because it's 45 degrees up from your cursor and 45 degrees down)
             position += Vector2.Normalize(new Vector2(speedX, speedY)) * 10f; //10 should equal whatever number you had on the previous line
             for (int i = 0; i < numberProjectiles; i++)
@@ -45,13 +47,5 @@ namespace CobbleMod.Items
             return false; //makes sure it doesn't shoot the projectile again after this
         }
 
-		public override void AddRecipes()
-		{
-			ModRecipe recipe = new ModRecipe(mod);
-			recipe.AddIngredient(ItemID.DirtBlock, 10);
-			recipe.AddTile(TileID.WorkBenches);
-			recipe.SetResult(this);
-			recipe.AddRecipe();
-		}
-	}
+    }
 }

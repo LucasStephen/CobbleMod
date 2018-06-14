@@ -25,7 +25,6 @@ namespace CobbleMod.Items
             item.rare = 5;
             item.width = 28;
             item.height = 30;
-            //item.usetime = 7;
             item.UseSound = SoundID.Item13;
             item.useStyle = 5;
             item.shootSpeed = 4f;
