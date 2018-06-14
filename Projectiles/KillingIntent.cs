@@ -77,7 +77,7 @@ namespace CobbleMod.Projectiles
                 Random r = new Random();
                 for (int i = 0; i < 3; i++)
                 {
-                    Projectile.NewProjectile(projectile.Center.X, projectile.Center.Y, r.Next(-3,3), r.Next(-3, 3), mod.ProjectileType("KillingIntent"), damage * 2, 0, Main.myPlayer, 0f, 0f); //Spawning a projectile
+                    Projectile.NewProjectile(projectile.Center.X, projectile.Center.Y, r.Next(-3,3), r.Next(-3, 3), mod.ProjectileType("KillingIntent"), Convert.ToInt32(damage * 1.1), 0, Main.myPlayer, 0f, 0f); //Spawning a projectile
                 }
             }
             Player p = Main.player[projectile.owner];
